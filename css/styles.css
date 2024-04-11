@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');/*fuente de letra*/
+
+:root{      /*seudo selector, es una forma de almacenar variables en css see conoce como custom properties*/
+    --blanco:#ffffff;
+    --negro: #212121;
+    --azul_cobalto: #004aad; 
+    --azul: #7bb7e0;
+    --azul-secundario:#C0EEF2;
+    --gris: #e1e1e1; 
+    --azul_tercero:#A2C6E6;
+
+    --fuenteParrafos:'Open Sans', sans-serif;
+    
+}
+
+
+html{
+    box-sizing: border-box;/*para que el maguin y el paddi no afecten*/
+    font-size: 62.5%;/*1rem = 10px*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem; 
+    line-height: 2;
+    background-color: var(--azul);
+}
+
+
+/*GLOBALES*/
+.contenedor{
+    width: min(90%, 120rem); 
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--blanco);
+}
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4{
+    font-family: var(--fuenteParrafos);
+    line-height: 1.2;
+}
+h1{
+    font-size: 4.8rem;
+}
+h2{
+    font-size: 4rem;
+}
+h3{
+    font-size: 3.2rem;
+}
+h4{
+    font-size: 2rem;
+}
+img{
+    max-width: 100%;
+}
+
+/*Utilidades*/
+.no-margin{
+    margin:0;
+}
+.no-padding{
+    padding: 0;
+}
+.centrar-texto{
+    text-align: center;
+}
+
+/** Header **/
+.header{
+    height: 25rem;
+    background-color: var(--blanco);
+}
+.barra {
+    padding-top: 1rem;
+}
+@media(min-width: 768px){
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+    }
+    .header{
+        height: 13rem;
+    }
+}
+.logo{
+    color:var(--azul_cobalto);
+}
+.logo__nombre{
+    font-weight: 700;
+}
+@media (min-width: 768px){
+    .navegacion{
+        display: flex;
+        /*gap: 2rem;*/
+    }
+    .navegacion__enlace{
+        padding: 1rem 3rem;
+        transition: .5s ease all;
+       text-decoration: none;
+       text-align: center;
+    }
+    .navegacion a:hover {
+        transform: translateY(18px);
+    }
+}
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color:var(--negro); 
+    margin: 1rem;
+    font-weight: 700;
+    background-color: var(--azul-secundario);
+    
+}
+
+
+
+
+/*IMAGEN CENTRAL*/
+.webp .portada{
+    background-image: url(../img/portada.webp);
+}
+.no-webp .portada{
+    background-image: url(../img/portada.jpg); 
+}
+.portada{
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 1rem;
+}
+.portada__texto{
+    text-align:left;
+    color:var(--negro);
+    margin-top:auto;
+
+}
+@media (min-width: 768px){
+    .portada__texto{
+        margin-top: auto;
+
+    }
+    .titulo__2{
+        padding-top:20rem;
+    }
+}
+
+
+
+/*blog*/
+@media(min-width: 768px){
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+        text-align: justify;
+    }
+}
+.contenido-principal{
+    background-color: var(--blanco);
+}
+.entrada{
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+.entrada:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+.boton {
+    display: block;
+    font-family: var(--fuenteParrafos);
+    color:var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    border: none;
+}
+@media (min-width: 768px){
+    .boton{
+        display: inline-block;
+    }
+}
+.boton:hover {
+    cursor: pointer;
+}
+.boton--primario {
+    background-color: var(--negro);
+}
+.boton--secundario{
+    background-color: var(--negro);
+}
+.titulo{
+    text-align: center;
+}
+.informacion {
+    list-style: none;
+}
+
+.widget-tratamientos{
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+.widget-tratamientos:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+.widget-tratamientos__label{
+    font-family: var(--fuenteParrafos);
+    font-weight: bold;
+}
+.widget-tratamientos__info{
+    font-weight: 700;
+}
+.widget-tratamientos__label,
+.widget-tratamientos__info{
+    font-size: 1.5rem;
+}
+
+/*pie de pagina*/
+.footer {
+    background-color: var(--blanco);
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+/*Nosotros*/
+@media (min-width: 768px){
+    .nosotros_img{
+        margin: 0rem;
+        width: 5rem;
+        height: 3rem;
+    }
+}
+
+/*Tratamientos*/
+.tratamientos{
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px){
+    .tratamientos{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+        text-align:justify;
+    }
+}
+
+.tratamientos:last-of-type {
+    border:none;
+}
+
+.tratamientos__label{
+    font-family: var(--fuenteParrafos);
+    font-weight: bold;
+}
+.tratamientos__info{
+    font-weight: 700;
+}
+.tratamientos__label,
+.tratamientos__info{
+    font-size: 1.5rem;
+}
+/*informacion de los tratamientos*/
+@media(min-width: 768px){
+    .column-drop-css{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+        text-align: justify;
+    }
+    .segunda{
+        grid-column: 1/3;
+
+    }
+}
+
+/*Contacto*/
+
+/*politicas*/
+.primaria{
+    text-align:justify;
+}
+
+/*ubicación*/
+
+.mapa{
+    width: min(60%, 100rem); 
+    margin: 0 auto;
+    padding: 1rem;
+    /*background-color: var(--negro);*/
+}
+.mapa__posicion{
+    background-color: var(--negro);
+    padding: 1rem;
+    padding-bottom: 0;
+}
+.mapa__titulo{
+    text-align: center;
+    margin: 1rem;
+    font-weight: lighter;
+}
+.mapa__titulo span{
+    background-color: var(--azul);
+	padding: 0 10px;
+	z-index: 50;
+	position: relative;
+}
+.mapa__texto::after{
+    text-align: center;
+    content: "";
+	display: inline-block;
+	height: 4px;
+	width: 100%;
+	background: var(--negro);
+	position: relative;
+	top: -55px;
+	
+}

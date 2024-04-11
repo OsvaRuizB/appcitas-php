@@ -1,0 +1,42 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@media(min-width: 768px){
+    .barra{
+        display:flex;
+        justify-content:space-between;
+        align-items:center; 
+        background-color:v.$blanco;
+        height: 3rem; }
+    .header{
+        height: 13rem;
+    }
+}
+.logo__nombre{
+    font-weight: 700;
+    color:v.$azul_cobalto; 
+}
+@media (min-width: 768px){
+    .navegacion{
+        display:flex;
+        //gap: 7rem;    
+    }
+    .navegacion__enlace{
+        transition: .5s ease all;
+       text-decoration: none;
+       text-align: center;
+    }
+    .navegacion a:hover {
+        transform: translateY(18px);
+        background-color: v.$azul_tercero;
+    }
+}
+.navegacion__enlace{
+    display: block;
+    padding: 1rem 3rem;
+    text-align: center;
+    font-size: 1.8rem;
+    color:v.$negro;
+    margin: 1rem;
+    font-weight: 700;
+    background-color:v.$azul-secundario;
+}
